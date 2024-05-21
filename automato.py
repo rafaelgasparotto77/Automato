@@ -1,6 +1,6 @@
 class AutomatoPedido:
     def __init__(self):
-        self.estados_finais = {'S3', 'S5', 'S8'}
+        self.estados_finais = {'S3', 'S5', 'S8', 'S9'}
         self.transicoes = {
             'S0': {'Quero': 'S1', 'Gostaria': 'S1', 'Vou querer': 'S1'},
             'S1': {'uma': 'S2', 'um': 'S2'},
@@ -8,8 +8,9 @@ class AutomatoPedido:
             'S3': {'com': 'S4', 'sem': 'S4', 'mais': 'S6', 'menos': 'S6', 'FINAL': 'S3'},
             'S4': {'queijo': 'S5', 'tomate': 'S5', 'cebola': 'S5'},
             'S5': {'FINAL': 'S5'},
-            'S6': {'queijo': 'S8', 'tomate': 'S8', 'cebola': 'S8'},
-            'S8': {'FINAL': 'S8'}
+            'S6': {'queijo': 'S7', 'tomate': 'S7', 'cebola': 'S7'},
+            'S7': {'FINAL': 'S8'},
+            'S8': {'FINAL': 'S9'}
         }
         self.estado_atual = 'S0'
 
